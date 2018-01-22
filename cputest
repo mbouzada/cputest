@@ -1,12 +1,80 @@
 #!/bin/bash
 
+## Mensajes según idioma
+case $LANG in
+	ca*)
+		MSG0="ATENCIÓN:"
+		MSG0="Para Usar este script necesita tener instalado «sysbench»
+para solucionarlo, aplique en la terminal «apt install sysbench»"
+		MSG0=
+		MSG0=
+		TIT="Valoración rápida"
+		PUNT="Calificación de este ordenador:"
+		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
+		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día."
+		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer de casi de todo pero \n\tun poco justo para algunas tareas."
+		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, pero \n\tsin pedirle peras al olmo."
+		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente \n\tcualquier cosa con este ordenador."
+		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
+		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo</b></span>"
+		;;
+	es*)
+		MSG0="ATENCIÓN:"
+		MSG0="Para Usar este script necesita tener instalado «sysbench»
+para solucionarlo, aplique en la terminal «apt install sysbench»"
+		MSG0=
+		MSG0=
+		TIT="Valoración rápida"
+		PUNT="Calificación de este ordenador:"
+		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
+		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día."
+		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer de casi de todo pero \n\tun poco justo para algunas tareas."
+		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, pero \n\tsin pedirle peras al olmo."
+		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente \n\tcualquier cosa con este ordenador."
+		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
+		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo</b></span>"
+		;;
+	gl*)
+		MSG0="ATENCIÓN:"
+		MSG0="Para Usar este script necesita ter instalado «sysbench»
+para solucionalo, aplique na terminal «apt install sysbench»"
+		MSG0=
+		MSG0=
+		TIT="Valoración rápida"
+		PUNT="Cualificación deste computador:"
+		TEXT0="\n\tEste equipo é <b>INSUFICIENTE</b> \n\tpara tarefas cotiás de hoxe en día"
+		TEXT1="\n\tEste equipo é <b>MOI XUSTO</b> \n\tpara tarefas cotiás de hoxe en día."
+		TEXT2="\n\tEste equipo é <b>SUFICIENTE</b> \n\tpara facer case de todo mais \n\tun chisco xusto para algunhas tarefas."
+		TEXT3="\n\tEste equipo está <b>BEN</b> \n\tpara facer de todo un pouco, mais \n\tsen pedir o demo e a aña ."
+		TEXT4="\n\tEste equipo es <b>NOTÁBEL</b>, \n\tcon este computador poderá facer \n\tprácticamente calquera cousa."
+		TEXT5="\n\tEste equipo é <b>SOBRESAINTE</b>, \n\tcon este computador poderá facer \n\tprácticamente calquera cousa."
+		TEXT6="\n\t<span size='large' color='red'><b>Non foi posíbel avaliar este equipo</b></span>"
+		;;
+	*)
+		MSG0="ATENCIÓN:"
+		MSG0="Para Usar este script necesita tener instalado «sysbench»
+para solucionarlo, aplique en la terminal «apt install sysbench»"
+		MSG0=
+		MSG0=
+		TIT="Valoración rápida"
+		PUNT="Calificación de este ordenador:"
+		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
+		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día."
+		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer de casi de todo pero \n\tun poco justo para algunas tareas."
+		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, but \n\twithout asking for the moon."
+		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente \n\tcualquier cosa con este ordenador."
+		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
+		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo</b></span>"
+		;;
+esac
+
+
 ## Comprobamos si existe el ejecutable «sysbench»
 FILE0=/usr/bin/sysbench
-if [ ! -f ${FILE0} ]; then
+if [ ! -x ${FILE0} ]; then
 	echo ""
-	echo "ATENCIÓN:"
-    echo "Para Usar este script necesita tener instalado «sysbench»
-para solucionarlo, aplique en la terminal «apt install sysbench»"
+	echo "${MSG0}"
+    echo "${MSG1}"
 	echo ""
 	echo ""
 	exit 0
@@ -20,53 +88,54 @@ EVENTOS=`sysbench --test=cpu --max-time=5 --num-threads=8 run|grep "total number
 NOTA=`echo print ${EVENTOS}/1000. |python`
 NOTASINDECIMALES=`echo print ${EVENTOS}/1000 |python`
 
+## Asignamos el mensaje y el icono en función de la «nota»
 case ${NOTASINDECIMALES} in
 	0)
-		VALORACION="\n<b>INSUFICIENTE</b> para tareas cotidianas de hoy día."
+		VALORACION="${TEXT0}"
 		FACE="face-sick"
 		;;
 	1)
-		VALORACION="\n<b>INSUFICIENTE</b> para tareas cotidianas de hoy día."
+		VALORACION="${TEXT0}"
 		FACE="face-sick"
 		;;
 	2)
-		VALORACION="\n<b>INSUFICIENTE</b> para tareas cotidianas de hoy día."
+		VALORACION="${TEXT0}"
 		FACE="face-worried"
 		;;
 	3)
-		VALORACION="\n<b>INSUFICIENTE</b> para tareas cotidianas de hoy día."
+		VALORACION="${TEXT0}"
 		FACE="face-tired"
 		;;
 	4)
-		VALORACION="\n<b>MUY JUSTO</b> para tareas cotidianas de hoy día."
+		VALORACION="${TEXT1}"
 		FACE="face-uncertain"
 		;;
 	5)
-		VALORACION="\n<b>SUFICIENTE</b> para hacer de todo pero \nun poco justo para algunas tareas."
+		VALORACION="${TEXT2}"
 		FACE="face-smirk"
 		;;
 	6) 
-		VALORACION="\n<b>BIEN</b> para hacer de todo un poco, pero \nsin pedirle peras al olmo."
+		VALORACION="${TEXT3}"
 		FACE="face-smile"
 		;;
 	7)
-		VALORACION="\n<b>NOTABLE</b>, podrá hacer prácticamente \ncualquier cosa con este ordenador."
+		VALORACION="${TEXT4}"
 		FACE="face-smile-big"
 		;;
 	8)
-		VALORACION="\n<b>NOTABLE</b>, podrá hacer prácticamente \ncualquier cosa con este ordenador."
+		VALORACION="${TEXT4}"
 		FACE="face-smile-big"
 		;;
 	9)
-		VALORACION="\n<b>SOBRESALIENTE</b>, podrá hacer prácticamente \ncualquier cosa con este ordenador."
+		VALORACION="${TEXT5}"
 		FACE="face-laugh"
 		;;
 	10) 
-		VALORACION="\n\t<b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
+		VALORACION="${TEXT5}"
 		FACE="face-laugh"
 		;;
 	*)
-		VALORACION="NO"
+		VALORACION="${TEXT6}"
 		FACE="face-angry"
 		;;
 esac
@@ -74,19 +143,21 @@ esac
 
 echo ${NOTA}
 
-## Ventana con mensaje final en función del generador de ventanas del sistema
+## Ventana con mensaje final en función del generador de ventanas existente en el sistema
 FILE1=/usr/bin/yad
-#FILE1=/usr/bin/zenity
-if [ "test -f ${FILE1}" ]; then
+if [ "test -x ${FILE1}" ]; then
     yad --info \
 		--window-icon="face-smile"\
 		--image="${FACE}" \
 		--title "Valoración rápida" \
 		--text \
 			"\n\tNota de este ordenador: <b>${NOTA}</b> 
-\t${VALORACION}"
+			\t${VALORACION}"
 else
-    zenity --info --title "Valoración rápida" --text "Nota de este ordenador: ${NOTA}
-		${VALORACION}"
+    zenity --info \
+		--title "Valoración rápida" \
+		--text \
+			"\n\tNota de este ordenador: <b>${NOTA}</b> 
+			\t${VALORACION}"
 fi
 
