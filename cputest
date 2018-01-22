@@ -1,13 +1,30 @@
 #!/bin/bash
 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+# (c) Antonio Sánchez León, 2018 <introlinux[fix@]gmail[fix.]com>
+# (c) Miguel Anxo Bouzada, 2018 <mbouzada[fix@]gmail[fix.]com>
+# (c) GALPon MinNo Team, 2018 <minino[fix@]galpon[fix.]org>
+
+## -
+
 ## Mensajes según idioma
 case $LANG in
 	ca*)
 		MSG0="ATENCIÓN:"
-		MSG0="Para Usar este script necesita tener instalado «sysbench»
+		MSG1="Para Usar este script necesita tener instalado «sysbench»
 para solucionarlo, aplique en la terminal «apt install sysbench»"
-		MSG0=
-		MSG0=
 		TIT="Valoración rápida"
 		PUNT="Calificación de este ordenador:"
 		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
@@ -20,10 +37,8 @@ para solucionarlo, aplique en la terminal «apt install sysbench»"
 		;;
 	es*)
 		MSG0="ATENCIÓN:"
-		MSG0="Para Usar este script necesita tener instalado «sysbench»
+		MSG1="Para Usar este script necesita tener instalado «sysbench»
 para solucionarlo, aplique en la terminal «apt install sysbench»"
-		MSG0=
-		MSG0=
 		TIT="Valoración rápida"
 		PUNT="Calificación de este ordenador:"
 		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
@@ -36,26 +51,22 @@ para solucionarlo, aplique en la terminal «apt install sysbench»"
 		;;
 	gl*)
 		MSG0="ATENCIÓN:"
-		MSG0="Para Usar este script necesita ter instalado «sysbench»
+		MSG1="Para Usar este script precisa ter instalado «sysbench»
 para solucionalo, aplique na terminal «apt install sysbench»"
-		MSG0=
-		MSG0=
 		TIT="Valoración rápida"
 		PUNT="Cualificación deste computador:"
 		TEXT0="\n\tEste equipo é <b>INSUFICIENTE</b> \n\tpara tarefas cotiás de hoxe en día"
 		TEXT1="\n\tEste equipo é <b>MOI XUSTO</b> \n\tpara tarefas cotiás de hoxe en día."
 		TEXT2="\n\tEste equipo é <b>SUFICIENTE</b> \n\tpara facer case de todo mais \n\tun chisco xusto para algunhas tarefas."
 		TEXT3="\n\tEste equipo está <b>BEN</b> \n\tpara facer de todo un pouco, mais \n\tsen pedir o demo e a aña ."
-		TEXT4="\n\tEste equipo es <b>NOTÁBEL</b>, \n\tcon este computador poderá facer \n\tprácticamente calquera cousa."
-		TEXT5="\n\tEste equipo é <b>SOBRESAINTE</b>, \n\tcon este computador poderá facer \n\tprácticamente calquera cousa."
+		TEXT4="\n\tEste equipo é <b>NOTÁBEL</b>, \n\tcon este computador poderá facer \n\tpracticamente calquera cousa."
+		TEXT5="\n\tEste equipo é <b>SOBRESAÍNTE</b>, \n\tcon este computador poderá facer \n\tpracticamente calquera cousa."
 		TEXT6="\n\t<span size='large' color='red'><b>Non foi posíbel avaliar este equipo</b></span>"
 		;;
 	*)
 		MSG0="ATENCIÓN:"
-		MSG0="Para Usar este script necesita tener instalado «sysbench»
+		MSG1="Para Usar este script necesita tener instalado «sysbench»
 para solucionarlo, aplique en la terminal «apt install sysbench»"
-		MSG0=
-		MSG0=
 		TIT="Valoración rápida"
 		PUNT="Calificación de este ordenador:"
 		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
