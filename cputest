@@ -29,7 +29,7 @@ para solucionarlo, aplique en la terminal «apt install sysbench»"
 		PUNT="Calificación de este ordenador:"
 		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
 		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día."
-		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer de casi de todo pero \n\tun poco justo para algunas tareas."
+		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer casi de todo pero \n\tun poco justo para algunas tareas."
 		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, pero \n\tsin pedirle peras al olmo."
 		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente \n\tcualquier cosa con este ordenador."
 		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
@@ -43,7 +43,7 @@ para solucionarlo, aplique en la terminal «apt install sysbench»"
 		PUNT="Calificación de este ordenador:"
 		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
 		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día."
-		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer de casi de todo pero \n\tun poco justo para algunas tareas."
+		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer casi de todo pero \n\tun poco justo para algunas tareas."
 		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, pero \n\tsin pedirle peras al olmo."
 		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente \n\tcualquier cosa con este ordenador."
 		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
@@ -71,14 +71,13 @@ para solucionarlo, aplique en la terminal «apt install sysbench»"
 		PUNT="Calificación de este ordenador:"
 		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
 		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día."
-		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer de casi de todo pero \n\tun poco justo para algunas tareas."
+		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer casi de todo pero \n\tun poco justo para algunas tareas."
 		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, but \n\twithout asking for the moon."
 		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente \n\tcualquier cosa con este ordenador."
 		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
 		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo</b></span>"
 		;;
 esac
-
 
 ## Comprobamos si existe el ejecutable «sysbench»
 FILE0=/usr/bin/sysbench
@@ -152,7 +151,7 @@ case ${NOTASINDECIMALES} in
 esac
 
 
-echo ${NOTA}
+echo ${PUNT} ${NOTA}
 
 ## Ventana con mensaje final en función del generador de ventanas existente en el sistema
 FILE1=/usr/bin/yad
@@ -160,15 +159,15 @@ if [ "test -x ${FILE1}" ]; then
     yad --info \
 		--window-icon="face-smile"\
 		--image="${FACE}" \
-		--title "Valoración rápida" \
+		--title "${TIT}" \
 		--text \
-			"\n\tNota de este ordenador: <b>${NOTA}</b> 
+			"\n\t${PUNT} <b>${NOTA}</b> 
 			\t${VALORACION}"
 else
     zenity --info \
-		--title "Valoración rápida" \
+		--title "${TIT}" \
 		--text \
-			"\n\tNota de este ordenador: <b>${NOTA}</b> 
+			"\n\t${PUNT} <b>${NOTA}</b> 
 			\t${VALORACION}"
 fi
 
