@@ -82,8 +82,7 @@ esac
 ## -
 
 ## Comprobamos si existe el ejecutable «sysbench»
-FILE0=/usr/bin/lerele
-#sysbench
+FILE0=/usr/bin/sysbench
 if [ ! -x ${FILE0} ]; then
 	echo ""
 	echo "${MSG}"
