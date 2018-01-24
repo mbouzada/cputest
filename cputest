@@ -22,62 +22,64 @@
 ## Mensajes según idioma
 case $LANG in
 	ca*)
-		MSG0="ATENCIÓN:"
-		MSG1="Para Usar este script necesita tener instalado «sysbench»
-para solucionarlo, aplique en la terminal «apt install sysbench»"
-		TIT="Valoración rápida"
-		PUNT="Calificación de este ordenador:"
-		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
-		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día."
-		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer casi de todo pero \n\tun poco justo para algunas tareas."
-		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, pero \n\tsin pedirle peras al olmo."
-		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente \n\tcualquier cosa con este ordenador."
-		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
-		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo</b></span>"
+		MSG0="ATENCIÓ:"
+		MSG1="Per fer servir aquest script cal «sysbench»,
+per instal·lar-ho, ordeni a la terminal «apt install sysbench»."
+		TIT="Valoració ràpida"
+		PUNT="Qualificació d'aquest ordinador:"
+		TEXT0="\n\tAquest equip és <b>INSUFICIENT</b> \n\tper a les tasques quotidianes d'avui dia.\t"
+		TEXT1="\n\tAquest equip és <b>MOLT JUST</b> \n\tper a les tasques quotidianes d'avui dia.\t"
+		TEXT2="\n\tAquest equip és <b>SUFICIENT</b> \n\tper fer gairabé de tot però una mica just\t\n\tper a algunes tasques."
+		TEXT3="\n\tAquest equip està <b>BÉ</b> \n\tper fer de tot una mica, però sense demanar-li\t\n\tla lluna en un cove."
+		TEXT4="\n\tAquest equip és <b>NOTABLE</b>, \n\tpot fer pràcticament qualsevol cosa.\t"
+		TEXT5="\n\tAquest equip és <b>EXCEL·LENT</b>, \n\tpot fer pràcticament qualsevol cosa.\t"
+		TEXT6="\n\t<span size='large' color='red'><b>No va ser possible avaluar aquest equip.\t</b></span>"
 		;;
 	es*)
 		MSG0="ATENCIÓN:"
-		MSG1="Para Usar este script necesita tener instalado «sysbench»
+		MSG1="Para Usar este script necesita tener instalado «sysbench»,
 para solucionarlo, aplique en la terminal «apt install sysbench»"
 		TIT="Valoración rápida"
 		PUNT="Calificación de este ordenador:"
-		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
-		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día."
-		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer casi de todo pero \n\tun poco justo para algunas tareas."
-		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, pero \n\tsin pedirle peras al olmo."
-		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente \n\tcualquier cosa con este ordenador."
-		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
-		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo</b></span>"
+		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día.\t"
+		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día.\t"
+		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer casi de todo pero un poco\t\n\tjusto para algunas tareas."
+		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, pero\t\n\tsin pedirle peras al olmo."
+		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente cualquier cosa.\t"
+		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier cosa.\t"
+		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo.\t</b></span>"
 		;;
 	gl*)
 		MSG0="ATENCIÓN:"
-		MSG1="Para Usar este script precisa ter instalado «sysbench»
+		MSG1="Para Usar este script precisa ter instalado «sysbench»,
 para solucionalo, aplique na terminal «apt install sysbench»"
 		TIT="Valoración rápida"
 		PUNT="Cualificación deste computador:"
-		TEXT0="\n\tEste equipo é <b>INSUFICIENTE</b> \n\tpara tarefas cotiás de hoxe en día"
-		TEXT1="\n\tEste equipo é <b>MOI XUSTO</b> \n\tpara tarefas cotiás de hoxe en día."
-		TEXT2="\n\tEste equipo é <b>SUFICIENTE</b> \n\tpara facer case de todo mais \n\tun chisco xusto para algunhas tarefas."
-		TEXT3="\n\tEste equipo está <b>BEN</b> \n\tpara facer de todo un pouco, mais \n\tsen pedir o demo e a aña ."
-		TEXT4="\n\tEste equipo é <b>NOTÁBEL</b>, \n\tcon este computador poderá facer \n\tpracticamente calquera cousa."
-		TEXT5="\n\tEste equipo é <b>SOBRESAÍNTE</b>, \n\tcon este computador poderá facer \n\tpracticamente calquera cousa."
-		TEXT6="\n\t<span size='large' color='red'><b>Non foi posíbel avaliar este equipo</b></span>"
+		TEXT0="\n\tEste equipo é <b>INSUFICIENTE</b> \n\tpara tarefas cotiás de hoxe en día.\t"
+		TEXT1="\n\tEste equipo é <b>MOI XUSTO</b> \n\tpara tarefas cotiás de hoxe en día.\t"
+		TEXT2="\n\tEste equipo é <b>SUFICIENTE</b> \n\tpara facer case de todo mais un chisco\t\n\txusto para algunhas tarefas."
+		TEXT3="\n\tEste equipo está <b>BEN</b> \n\tpara facer de todo un pouco, mais\t\n\tsen pedir o demo e a aña ."
+		TEXT4="\n\tEste equipo é <b>NOTÁBEL</b>, \n\tpoderá facer practicamente calquera cousa.\t"
+		TEXT5="\n\tEste equipo é <b>SOBRESAÍNTE</b>, \n\tpoderá facer practicamente calquera cousa.\t"
+		TEXT6="\n\t<span size='large' color='red'><b>Non foi posíbel avaliar este equipo.\t</b></span>"
 		;;
 	*)
 		MSG0="ATENCIÓN:"
-		MSG1="Para Usar este script necesita tener instalado «sysbench»
+		MSG1="Para Usar este script necesita tener instalado «sysbench»,
 para solucionarlo, aplique en la terminal «apt install sysbench»"
 		TIT="Valoración rápida"
 		PUNT="Calificación de este ordenador:"
-		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día."
-		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día."
-		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer casi de todo pero \n\tun poco justo para algunas tareas."
-		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, but \n\twithout asking for the moon."
-		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente \n\tcualquier cosa con este ordenador."
-		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier \n\tcosa con este ordenador."
-		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo</b></span>"
+		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día.\t"
+		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día.\t"
+		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer casi de todo pero tun poco\t\n\tjusto para algunas tareas."
+		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, but\t\n\twithout asking for the moon."
+		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente cualquier cosa.\t"
+		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier cosa.\t"
+		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo.\t</b></span>"
 		;;
 esac
+
+## -
 
 ## Comprobamos si existe el ejecutable «sysbench»
 FILE0=/usr/bin/sysbench
@@ -93,6 +95,7 @@ fi
 ## Ejecutamos la orden base
 EVENTOS=`sysbench --test=cpu --max-time=5 --num-threads=8 run|grep "total number of events"|awk '{print $5}'`
 
+## Calculamos la calificación/nota
 #NOTA=$(($EVENTOS/1000))
 #NOTA=$(echo "scale=2; $EVENTOS/1000"|bc)
 NOTA=`echo print ${EVENTOS}/1000. |python`
