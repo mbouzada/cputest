@@ -64,18 +64,18 @@ para solucionalo, aplique na terminal «apt install sysbench»."
 		TEXT6="\n\t<span size='large' color='red'><b>Non foi posíbel avaliar este equipo.\t</b></span>"
 		;;
 	*)
-		MSG="ATENCIÓN:
-Para Usar este script necesita tener instalado «sysbench»,
-para solucionarlo, aplique en la terminal «apt install sysbench»."
-		TIT="Valoración rápida"
-		PUNT="Calificación de este ordenador:"
-		TEXT0="\n\tEste equipo es <b>INSUFICIENTE</b> \n\tpara tareas cotidianas de hoy día.\t"
-		TEXT1="\n\tEste equipo es <b>MUY JUSTO</b> \n\tpara tareas cotidianas de hoy día.\t"
-		TEXT2="\n\tEste equipo es <b>SUFICIENTE</b> \n\tpara hacer casi de todo pero tun poco\t\n\tjusto para algunas tareas."
-		TEXT3="\n\tEste equipo está <b>BIEN</b> \n\tpara hacer de todo un poco, but\t\n\twithout asking for the moon."
-		TEXT4="\n\tEste equipo es <b>NOTABLE</b>, \n\tpodrá hacer prácticamente cualquier cosa.\t"
-		TEXT5="\n\tEste equipo es <b>SOBRESALIENTE</b>, \n\tpodrá hacer prácticamente cualquier cosa.\t"
-		TEXT6="\n\t<span size='large' color='red'><b>No fué posible evaluar este equipo.\t</b></span>"
+		MSG="Warning:
+To use this script you need «sysbench»,
+to solve it, launch «apt install sysbench» in a terminal."
+		TIT="Fast benchmark"
+		PUNT="Rating of this computer:"
+		TEXT0="\n\tThis computer is <b>INSSUFICIENT</b> \n\tfor today's everyday tasks.\t"
+		TEXT1="\n\tThis computer is <b>VERY LIMITED</b> \n\tfor today's everyday tasks.\t"
+		TEXT2="\n\tThe speed of this computer is <b>ENOUGH</b> \n\tto do almost everything but a bit fair\t\n\tfor some tasks."
+		TEXT3="\n\tThe speed of this computer is <b>QUITE GOOD</b> \n\tto do everything, but\t\n\twithout asking for the moon."
+		TEXT4="\n\tThe speed of this computer is <b>REMARKABLE</b>, \n\tyou can do practically everything.\t"
+		TEXT5="\n\tThis computer is a <b>BEAST</b>, \n\tyou can do practically everything.\t"
+		TEXT6="\n\t<span size='large' color='red'><b>It was not possible to evaluate this computer.\t</b></span>"
 		;;
 esac
 
@@ -158,7 +158,7 @@ echo ${PUNT} ${NOTA}
 FILE1=/usr/bin/yad
 if [ "test -x ${FILE1}" ]; then
     yad --info \
-		--window-icon="face-smile"\
+		--window-icon="system-run"\
 		--image="${FACE}" \
 		--title "${TIT}" \
 		--text \
